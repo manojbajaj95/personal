@@ -44,7 +44,16 @@ export const getPost = async (slug: string) => {
 
   const { content, data } = matter(source)
 
-  return { content, data, slug }
+  return { content, data, slug } as ArticleWithMeta
+}
+
+export const getHeroImage = async (slug: string) => {
+  const imageFilePath = path.join(POSTS_PATH, `${slug}/image.png`)
+  if (fs.existsSync(imageFilePath)) {
+    return imageFilePath
+  }
+  return null
+
 }
 
 

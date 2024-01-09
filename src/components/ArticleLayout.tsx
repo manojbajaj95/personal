@@ -1,13 +1,10 @@
-import { useContext } from 'react'
-import { useRouter } from 'next/navigation'
-
-import { AppContext } from '@/app/providers'
 import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
 import { type ArticleWithMeta } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -51,6 +48,7 @@ export function ArticleLayout({ article }: { article: ArticleWithMeta }) {
                 <span className="ml-3">{formatDate(data.date)}</span>
               </time>
             </header>
+
             <Prose>
               <MDXRemote source={content} />
             </Prose>

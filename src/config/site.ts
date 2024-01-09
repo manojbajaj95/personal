@@ -31,5 +31,10 @@ export const siteConfig = {
     //   title: "Uses",
     //   href: "/uses"
     // },
+    {
+      title: "Contact",
+      href: "https://cal.com/manojbajaj/15min"
+    },
+
   ]
 }

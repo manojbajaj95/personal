@@ -11,9 +11,6 @@ import {
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -146,7 +143,14 @@ function Role({ role }: { role: Role }) {
   return (
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+        <Image
+          src={role.logo}
+          alt=""
+          className="h-7 w-7"
+          unoptimized
+          width={7}
+          height={7}
+        />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
@@ -176,7 +180,7 @@ function Resume() {
     {
       company: 'Binocs',
       title: 'Engineering Lead',
-      logo: logoPlanetaria,
+      logo: 'https://media.licdn.com/dms/image/C4D0BAQH0Gc1vEF_n_w/company-logo_200_200/0/1658297955368/binocs_co_logo?e=1712793600&v=beta&t=wqkCp6Hl6G18xBMwHMDWrRQ31a87PsL6YrGurDvy2g0',
       start: '2022',
       end: {
         label: 'Present',
@@ -186,14 +190,14 @@ function Resume() {
     {
       company: 'FalconX',
       title: 'Softaware Engineer',
-      logo: logoAirbnb,
+      logo: 'https://media.licdn.com/dms/image/C560BAQFJ_w3la4fbaA/company-logo_200_200/0/1643402299604/thefalconx_logo?e=1712793600&v=beta&t=x_a9rS_Q4n97yvU8Q1w73zGtfm6opAkDdENGBqtTwxE',
       start: '2020',
       end: '2021',
     },
     {
       company: 'SquarePoint Capital',
       title: 'Software Engineer',
-      logo: logoFacebook,
+      logo: 'https://media.licdn.com/dms/image/C4D0BAQHovZtPQDiUeA/company-logo_200_200/0/1631348588757?e=1712793600&v=beta&t=0q8fwiAcTqH4TeXrRy4tlnpL6vrFwOTSBJCBV8LNBYg',
       start: '2017',
       end: '2019',
     },
