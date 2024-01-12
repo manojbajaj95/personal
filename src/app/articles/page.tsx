@@ -2,32 +2,33 @@ import { type Metadata } from 'next'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { getAllPosts, type ArticleWithMeta } from '@/lib/articles'
+import { type Blog, allBlogs } from 'contentlayer/generated'
 import { formatDate } from '@/lib/formatDate'
 
-function Article({ article }: { article: ArticleWithMeta }) {
-  const { data, content, slug } = article
+function Article({ article }: { article: Blog }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
-        <Card.Title href={`/articles/${slug}`}>{data.title}</Card.Title>
+        <Card.Title href={`/articles/${article.slug}`}>
+          {article.title}
+        </Card.Title>
         <Card.Eyebrow
           as="time"
-          dateTime={data.date}
+          dateTime={article.date}
           className="md:hidden"
           decorate
         >
-          {formatDate(data.date)}
+          {formatDate(article.date)}
         </Card.Eyebrow>
-        <Card.Description>{data.description}</Card.Description>
+        <Card.Description>{article.description}</Card.Description>
         <Card.Cta>Read article</Card.Cta>
       </Card>
       <Card.Eyebrow
         as="time"
-        dateTime={data.date}
+        dateTime={article.date}
         className="mt-1 hidden md:block"
       >
-        {formatDate(data.date)}
+        {formatDate(article.date)}
       </Card.Eyebrow>
     </article>
   )
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
 }
 
 export default async function ArticlesIndex() {
-  let articles = await getAllPosts()
+  let articles = allBlogs
 
   return (
     <SimpleLayout

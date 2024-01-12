@@ -1,13 +1,15 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
-import { getHeroImage, getPost } from '@/lib/articles'
+import { allBlogs } from 'contentlayer/generated'
+import { notFound } from 'next/navigation'
 
 export default async function Article({
   params,
 }: {
   params: { slug: string }
 }) {
-  const article = await getPost(params.slug)
-  // const imagePath = await getHeroImage(params.slug)
+  const article = allBlogs.find((post) => post.slug === params.slug)
+
+  if (!article) return notFound()
 
   return <ArticleLayout article={article} />
 }

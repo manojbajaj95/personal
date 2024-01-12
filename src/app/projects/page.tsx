@@ -11,39 +11,30 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'The Mom Test - User Interviews as Scale',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
-  },
-  {
-    name: 'Animaginary',
-    description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
-  },
-  {
-    name: 'HelioStream',
-    description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
-  },
-  {
-    name: 'cosmOS',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
+      "Helps founders conduct user interviews at scale. Inspired by best selling book, The Mom's Test.",
     link: { href: '#', label: 'github.com' },
     logo: logoCosmos,
   },
   {
-    name: 'OpenShuttle',
+    name: 'HSR Founders club',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
+      'A community of 500+ founders from bangalore. We organize events, brainstorm ideas and help each other.',
+    link: { href: 'http://manojbajaj95.vercel.io', label: 'Community' },
+    logo: logoHelioStream,
+  },
+  {
+    name: 'Blog Generator',
+    description: 'An AI blog generator with optimized SEO',
     link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+    logo: logoAnimaginary,
+  },
+  {
+    name: 'Personal Website',
+    description: 'A small personal website tos showcase my profile, blogs, etc',
+    link: { href: 'http://manojbajaj95.vercel.io', label: 'Personal Website' },
+    logo: logoPlanetaria,
   },
 ]
 

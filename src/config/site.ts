@@ -19,10 +19,10 @@ export const siteConfig = {
       title: "Articles",
       href: "/articles"
     },
-    // {
-    //   title: "Projects",
-    //   href: "/projects"
-    // },
+    {
+      title: "Projects",
+      href: "/projects"
+    },
     // {
     //   title: "Speaking",
     //   href: "/speaking"
@@ -33,7 +33,7 @@ export const siteConfig = {
     // },
     {
       title: "Contact",
-      href: "https://cal.com/manojbajaj/15min"
+      href: "https://cal.com/manojbajaj/15min",
     },
 
   ]
