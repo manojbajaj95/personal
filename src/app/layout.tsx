@@ -6,6 +6,8 @@ import { Layout } from '@/components/Layout'
 import '@/styles/tailwind.css'
 import { siteConfig } from '@/config/site'
 
+export const dynamic = 'force-static'
+
 export const metadata: Metadata = {
   title: {
     template: `%s - ${siteConfig.name}`,

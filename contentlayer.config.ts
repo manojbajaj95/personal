@@ -5,6 +5,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeCodeTitles from 'rehype-code-titles'
 import { rehypeAccessibleEmojis } from 'rehype-accessible-emojis'
+import { stringify } from 'querystring'
 
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
@@ -18,6 +19,7 @@ export const Blog = defineDocumentType(() => ({
     date: { type: 'string', required: true },
     cover: { type: 'string', required: false },
     slug: { type: 'string', required: false },
+    status: { type: 'string', required: true }
   },
   computedFields: {
     readingTime: {

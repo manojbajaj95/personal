@@ -250,7 +250,10 @@ function Photos() {
 }
 
 export default async function Home() {
-  let articles = allBlogs.slice(0, 4)
+  let articles = allBlogs.filter((blog) => {
+    return blog.status == 'published'
+  })
+.slice(0, 4)
 
   return (
     <>
