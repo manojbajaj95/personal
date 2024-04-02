@@ -41,6 +41,7 @@ export const metadata: Metadata = {
 }
 
 export default async function ArticlesIndex() {
+  // let articles = allBlogs
   let articles = allBlogs.filter((blog) => {
     return blog.status == 'published'
   })

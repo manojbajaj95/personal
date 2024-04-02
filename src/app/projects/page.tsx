@@ -3,40 +3,7 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-
-const projects = [
-  {
-    name: 'The Mom Test - User Interviews as Scale',
-    description:
-      "Helps founders conduct user interviews at scale. Inspired by best selling book, The Mom's Test.",
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
-  },
-  {
-    name: 'HSR Founders club',
-    description:
-      'A community of 500+ founders from bangalore. We organize events, brainstorm ideas and help each other.',
-    link: { href: 'http://manojbajaj95.vercel.io', label: 'Community' },
-    logo: logoHelioStream,
-  },
-  {
-    name: 'Blog Generator',
-    description: 'An AI blog generator with optimized SEO',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
-  },
-  {
-    name: 'Personal Website',
-    description: 'A small personal website tos showcase my profile, blogs, etc',
-    link: { href: 'http://manojbajaj95.vercel.io', label: 'Personal Website' },
-    logo: logoPlanetaria,
-  },
-]
+import { oldProjects, projects } from '@/config/projects'
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -72,6 +39,39 @@ export default function Projects() {
                 alt=""
                 className="h-8 w-8"
                 unoptimized
+                width={8}
+                height={8}
+              />
+            </div>
+            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+              <Card.Link href={project.link.href}>{project.name}</Card.Link>
+            </h2>
+            <Card.Description>{project.description}</Card.Description>
+            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+              <LinkIcon className="h-6 w-6 flex-none" />
+              <span className="ml-2">{project.link.label}</span>
+            </p>
+          </Card>
+        ))}
+
+      </ul>
+      <p className="my-12 text-base text-zinc-600 dark:text-zinc-400 ">
+        Older Projects
+      </p>
+      <ul
+        role="list"
+        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        {oldProjects.map((project) => (
+          <Card as="li" key={project.name}>
+            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <Image
+                src={project.logo}
+                alt=""
+                className="h-8 w-8"
+                unoptimized
+                width={8}
+                height={8}
               />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
