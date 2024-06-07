@@ -180,7 +180,7 @@ function Resume() {
     {
       company: 'Binocs',
       title: 'Engineering Lead',
-      logo: 'https://media.licdn.com/dms/image/C4D0BAQH0Gc1vEF_n_w/company-logo_200_200/0/1658297955368/binocs_co_logo?e=1712793600&v=beta&t=wqkCp6Hl6G18xBMwHMDWrRQ31a87PsL6YrGurDvy2g0',
+      logo: "/binocs.svg",
       start: '2022',
       end: {
         label: 'Present',
@@ -190,14 +190,14 @@ function Resume() {
     {
       company: 'FalconX',
       title: 'Softaware Engineer',
-      logo: 'https://media.licdn.com/dms/image/C560BAQFJ_w3la4fbaA/company-logo_200_200/0/1643402299604/thefalconx_logo?e=1712793600&v=beta&t=x_a9rS_Q4n97yvU8Q1w73zGtfm6opAkDdENGBqtTwxE',
+      logo: '/falconx.svg',
       start: '2020',
       end: '2021',
     },
     {
       company: 'SquarePoint Capital',
       title: 'Software Engineer',
-      logo: 'https://media.licdn.com/dms/image/C4D0BAQHovZtPQDiUeA/company-logo_200_200/0/1631348588757?e=1712793600&v=beta&t=0q8fwiAcTqH4TeXrRy4tlnpL6vrFwOTSBJCBV8LNBYg',
+      logo: '/sqpt.jpeg',
       start: '2017',
       end: '2019',
     },
@@ -253,7 +253,7 @@ export default async function Home() {
   let articles = allBlogs.filter((blog) => {
     return blog.status == 'published'
   })
-.slice(0, 4)
+    .slice(0, 4)
 
   return (
     <>

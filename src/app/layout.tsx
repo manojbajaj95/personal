@@ -8,7 +8,12 @@ import { siteConfig } from '@/config/site'
 
 export const dynamic = 'force-static'
 
+
+const base = new URL("https://mbajaj.dev")
+
+
 export const metadata: Metadata = {
+  metadataBase: base,
   title: {
     template: `%s - ${siteConfig.name}`,
     default: `${siteConfig.name} - ${siteConfig.title}`,

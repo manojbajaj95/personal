@@ -7,21 +7,21 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 export const projects = [
   {
-    name: 'Video API',
-    description: 'A simple video API that allows you to upload, download, and manipulate multimedia with AI.',
-    link: { href: 'https://github.com/mbajaj/video-api', label: 'Volunteer' },
-    logo: logoCosmos,
+    name: 'Recall: Long term memory for Humans',
+    description: 'A memory store for humans to remeber notes, and content consumed.',
+    link: { href: '', label: 'Current' },
+    logo: logoAnimaginary,
   },
   {
-    name: 'Listenbravo: ',
-    description: 'Unveil Hidden Buyers to Unlock Your Business Potential ',
-    link: { href: 'https://listenbravo.com/', label: 'Advisory' },
-    logo: "https://listenbravo.com/_next/image?url=%2Fassets%2Fimages%2Flogo.png&w=48&q=75"
+    name: 'Zetsy: Your personal assistant to handle any task',
+    description: 'Delegate your tasks to an agent in simple english.',
+    link: { href: '', label: 'Current' },
+    logo: logoAnimaginary,
   },
   {
-    name: 'Virtual Marketer',
-    description: 'An AI marketing tool that optimizes you inbound leads generations',
-    link: { href: '/notfound', label: 'Coming Soon' },
+    name: 'Neander: Agent driven Interactive Demos',
+    description: 'An AI agent that assits buyers with pre sales demos',
+    link: { href: 'https://neander.ai', label: 'Current' },
     logo: logoAnimaginary,
   },
   {
@@ -44,5 +44,17 @@ export const oldProjects = [
     description: 'A drop in google sheets replacement with support for 1m+ rows and native db connectivity',
     link: { href: '/notfound', label: 'Shutdown' },
     logo: logoOpenShuttle,
+  },
+  {
+    name: 'Video API',
+    description: 'A simple video API that allows you to upload, download, and manipulate multimedia with AI.',
+    link: { href: 'https://github.com/mbajaj/video-api', label: 'Volunteer' },
+    logo: logoCosmos,
+  },
+  {
+    name: 'Listenbravo',
+    description: 'Unveil Hidden Buyers to Unlock Your Business Potential ',
+    link: { href: 'https://listenbravo.com/', label: 'Advisory' },
+    logo: "https://listenbravo.com/_next/image?url=%2Fassets%2Fimages%2Flogo.png&w=48&q=75"
   },
 ]
