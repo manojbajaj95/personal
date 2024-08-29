@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-import { withContentlayer } from 'next-contentlayer'
 
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
@@ -13,4 +12,4 @@ const nextConfig = {
   },
 }
 
-export default withContentlayer(nextConfig)
+export default nextConfig

@@ -1,6 +1,5 @@
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -16,9 +15,9 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
-import { type Blog, allBlogs } from 'contentlayer/generated'
-import { formatDate } from '@/lib/formatDate'
 import { siteConfig } from '@/config/site'
+
+import { query } from '@/lib/hashnode'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -66,16 +65,14 @@ function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function Article({ article }: { article: Blog }) {
+function PostCard({ post }: { post: PostSmall }) {
   return (
     <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
+      <Card.Title href={`/articles/${post.slug}`}>{post.title}</Card.Title>
+      <Card.Eyebrow as="time" decorate>
+        {post.publishedAt}
       </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
+      <Card.Description>{post.subtitle}</Card.Description>
       <Card.Cta>Read article</Card.Cta>
     </Card>
   )
@@ -180,7 +177,7 @@ function Resume() {
     {
       company: 'Binocs',
       title: 'Engineering Lead',
-      logo: "/binocs.svg",
+      logo: '/binocs.svg',
       start: '2022',
       end: {
         label: 'Present',
@@ -250,10 +247,37 @@ function Photos() {
 }
 
 export default async function Home() {
-  let articles = allBlogs.filter((blog) => {
-    return blog.status == 'published'
+  const {
+    data: { publication },
+  } = await query({
+    query: `
+      query($host: String!) {
+        publication(host: $host) {
+          posts(first: 10) {
+            edges {
+              node {
+                coverImage {
+                  url
+                }
+                id
+                publishedAt
+                slug
+                title
+                subtitle
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: {
+      host: 'mbajaj.hashnode.dev',
+    },
   })
-    .slice(0, 4)
+
+  const posts: Array<PostSmall> = publication.posts.edges.map(
+    ({ node }: { node: Post }) => node,
+  )
 
   return (
     <>
@@ -295,8 +319,8 @@ export default async function Home() {
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
+            {posts.map((post) => (
+              <PostCard key={post.slug} post={post} />
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">

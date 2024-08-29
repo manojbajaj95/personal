@@ -1,16 +1,16 @@
-import { allBlogs } from 'contentlayer/generated';
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next'
+
+const allBlogs = []
 
 const postsSitemap: MetadataRoute.Sitemap = allBlogs.map((post) => ({
   url: `${process.env.NEXT_PUBLIC_SITE_URL}/articles/${post.slug}`,
   lastModified: post.date,
-  priority: 0.4
-}));
+  priority: 0.4,
+}))
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const url = process.env.NEXT_PUBLIC_SITE_URL || "https://mbajaj.dev"
+  const url = process.env.NEXT_PUBLIC_SITE_URL || 'https://mbajaj.dev'
   return [
-
     {
       url: url,
       lastModified: new Date(),
@@ -54,5 +54,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     ...postsSitemap,
-  ];
+  ]
 }

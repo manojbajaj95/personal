@@ -1,9 +1,6 @@
 import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
-import { formatDate } from '@/lib/formatDate'
 import Link from 'next/link'
-import { type Blog } from 'contentlayer/generated'
-import { useMDXComponent } from 'next-contentlayer/hooks'
 
 function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -18,8 +15,7 @@ function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function ArticleLayout({ article }: { article: Blog }) {
-  const MDXContent = useMDXComponent(article.body.code)
+export function ArticleLayout({ article }: { article: Post }) {
   return (
     <Container className="mt-16 lg:mt-32">
       <div className="xl:relative">
@@ -38,16 +34,17 @@ export function ArticleLayout({ article }: { article: Blog }) {
               <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
                 {article.title}
               </h1>
-              <time
-                dateTime={article.date}
-                className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
-              >
+              <time className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500">
                 <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
-                <span className="ml-3">{formatDate(article.date)}</span>
+                <span className="ml-3">{article.publishedAt}</span>
               </time>
             </header>
             <Prose>
-              <MDXContent />
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: article.content.html,
+                }}
+              />
             </Prose>
           </article>
         </div>
