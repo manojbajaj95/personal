@@ -10,6 +10,9 @@ const nextConfig = {
     /// Set this to false if you want production builds to abort if there's lint errors
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ['cdn.hashnode.com'],
+  },
 }
 
 export default nextConfig

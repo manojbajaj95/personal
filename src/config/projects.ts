@@ -6,24 +6,7 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 
 export const projects = [
-  {
-    name: 'Recall: Long term memory for Humans',
-    description: 'A memory store for humans to remeber notes, and content consumed.',
-    link: { href: '', label: 'Current' },
-    logo: logoAnimaginary,
-  },
-  {
-    name: 'Zetsy: Your personal assistant to handle any task',
-    description: 'Delegate your tasks to an agent in simple english.',
-    link: { href: '', label: 'Current' },
-    logo: logoAnimaginary,
-  },
-  {
-    name: 'Neander: Agent driven Interactive Demos',
-    description: 'An AI agent that assits buyers with pre sales demos',
-    link: { href: 'https://neander.ai', label: 'Current' },
-    logo: logoAnimaginary,
-  },
+
   {
     name: 'HSR Founders Club',
     description: 'A community of 500+ founders from bangalore. We organize events, brainstorm ideas and help each other.',
@@ -39,6 +22,19 @@ export const projects = [
 ]
 
 export const oldProjects = [
+  {
+    name: 'Zetsy: Long term memory for Humans',
+    description: 'A memory store for humans to remeber notes, and content consumed.',
+    link: { href: 'https://zetsy.dev', label: 'Current' },
+    logo: logoAnimaginary,
+  },
+
+  {
+    name: 'Neander: Agent driven Interactive Demos',
+    description: 'An AI agent that assits buyers with pre sales demos',
+    link: { href: 'https://neander.ai', label: 'Current' },
+    logo: logoAnimaginary,
+  },
   {
     name: 'RIVI',
     description: 'A drop in google sheets replacement with support for 1m+ rows and native db connectivity',

@@ -1,4 +1,4 @@
-import { ArticleLayout } from '@/components/ArticleLayout'
+import { PostLayout } from '@/components/ArticleLayout'
 import { notFound } from 'next/navigation'
 import { query } from '@/lib/hashnode'
 
@@ -41,5 +41,5 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   if (!post) return notFound()
 
-  return <ArticleLayout article={post} />
+  return <PostLayout post={post} />
 }
